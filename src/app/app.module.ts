@@ -11,6 +11,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, RouterConfig } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome.component';
 import { SandboxComponent } from './sandbox/sandbox.component';
 import { PresenterComponent } from './presenter/presenter.component';
 import { ScalingWrapperComponent } from './scaling-wrapper/scaling-wrapper.component';
@@ -25,6 +26,7 @@ import { DeckLoader } from './deck-loader';
 import { SparrowsComponent } from './sparrows/sparrows.component';
 
 const routes: RouterConfig = [
+  { path: '', component: WelcomeComponent },  
   { path: ':trainingSetName', component: SparrowsComponent }
 ];
 
@@ -40,7 +42,8 @@ const routes: RouterConfig = [
     PresenterComponent,
     SelectDeckComponent,
     PreviewDeckComponent,
-    SparrowsComponent
+    SparrowsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

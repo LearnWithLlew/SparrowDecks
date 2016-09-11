@@ -1,3 +1,4 @@
+export * from './/welcome.component';
 export * from './animation-experiment';
 export * from './presenter';
 export * from './preview-deck';
