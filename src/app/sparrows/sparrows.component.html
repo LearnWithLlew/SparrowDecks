@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col s1">House</div>
+  <div 
+    (swipeRight)="handleSwipeRight()"
+    (swipeLeft)="handleSwipeLeft()"
+    class="col s10"
+  >
+    <sd-problem-with-solution
+      [problemTemplate]=" trainingSet.baseUrl + trainingSet.examples[0].image "
+      [solutionTemplate]=" indicator "
+    ></sd-problem-with-solution>
+  </div>
+  <div class="col s1">Song</div>
+</div>

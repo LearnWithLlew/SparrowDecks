@@ -1,0 +1,20 @@
+<div *ngIf="deck?.cards">
+
+  <div>
+    Deck: <strong>{{ deck.name }}</strong>
+  </div>
+
+  <div
+    (swipeRight)="nextCard()"
+    (swipeLeft)="prevCard()"
+  >
+  </div>
+
+  <div>
+    <button (click)="prevCard()"> &lt; </button>
+    {{ currentCardIndex + 1 }} of {{ deck.cards.length }}
+    <button (click)="nextCard()"> &gt; </button>
+  </div>
+
+</div>
+

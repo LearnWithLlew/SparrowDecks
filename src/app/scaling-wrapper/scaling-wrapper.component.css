@@ -1,0 +1,21 @@
+
+/* The container should have no padding, margin, or anything
+ * else that might interfere with size calculations.
+ */
+.scaling-wrapper-container {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  overflow: hidden;
+
+  /* Flexbox centering styles have been removed.
+   * Centering (or any other alignment), formatting, etc.,
+   * will be handled by the HTML projected through
+   * ScalingWrapperComponent.
+   */
+}
+
+.scaling-wrapper-content {
+  transform-origin: 0 0;
+}

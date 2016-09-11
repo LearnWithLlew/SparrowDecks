@@ -1,0 +1,59 @@
+<h2> animation-experiment </h2>
+
+<div #divref
+  [@myState]="currentState"
+  style="
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    width: 500px;
+    background-color: lightgreen;
+    border: 3px solid green;
+    border-radius: 20px;
+    padding: 20px;
+  "
+>
+  <sd-scaling-wrapper>
+
+    <!--
+      Example of a content template that takes up the entire scaling wrapper
+      area, with content horizontally and vertically centered using flexbox.
+    -->
+    <div style="
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+    ">
+      <!--
+        This inner div is required so the flexbox only has one
+        element to h/v center. Otherwise each of the elements gets
+        distributed horizontally.
+      -->
+      <div>
+        <div style="color: black; font-size: 72px;">
+          Large text above the image.
+          Large text above the image.
+          Large text above the image.
+        </div>
+
+        <!-- This image should take up half the width of the scaling wrapper -->
+        <img src="sparrow/images/image1.jpeg" style="width: 512px;">
+
+        <div style="color: green; font-size: 48px;">
+          Smaller text below the image.
+          Smaller text below the image.
+          Smaller text below the image.
+        </div>
+      </div>
+    </div>
+
+  </sd-scaling-wrapper>
+</div>
+
+<button (click)="changeAnimationState()">
+  Change Animation State
+</button>

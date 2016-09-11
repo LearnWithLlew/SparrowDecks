@@ -1,0 +1,7 @@
+<div>
+  <ul>
+    <li *ngFor="let deck of decks">
+      <a href="#" (click)="selectDeck(deck)">{{ deck.name }}</a>
+    </li>
+  </ul>
+</div>

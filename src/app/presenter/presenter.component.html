@@ -1,0 +1,15 @@
+<h2>Presenter</h2>
+
+<div>
+  <h3>Select Deck</h3>
+  <sd-select-deck
+    [decks]="allDecks"
+    (deckSelected)="changeDeck($event)"
+  ></sd-select-deck>
+</div>
+
+<div>
+  <h3>Preview</h3>
+  <sd-preview-deck [deck]="currentDeck"></sd-preview-deck>
+</div>
+

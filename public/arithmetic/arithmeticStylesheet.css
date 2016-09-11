@@ -1,0 +1,35 @@
+/*
+  Take up the entire card area, with content centered horizontally and
+  vertically using flexbox.
+*/
+.arithmeticCard {
+  height: 768px; /* XXX: Annoying workaround until it's fixed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* Problem-specific styles */
+
+.arithmeticCard.problem {
+  background-color: white;
+  font-size: 128px;
+  font-weight: bold;
+  font-family: monospace;
+  color: red;
+}
+
+
+/* Solution-specific styles */
+
+.arithmeticCard.solution {
+  background-color: white; /* Use `none` to overlay solution on problem */
+  font-size: 128px;
+  font-weight: bold;
+  font-family: monospace;
+  color: green;
+}
+
+
