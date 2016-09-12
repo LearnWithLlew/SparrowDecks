@@ -67225,7 +67225,7 @@ var SparrowsComponent = (function () {
         var result = "";
         for (var _i = 0, text_1 = text; _i < text_1.length; _i++) {
             var c = text_1[_i];
-            result += c + ' \n';
+            result += c + ' <br />';
         }
         return result;
     };
@@ -67465,7 +67465,7 @@ module.exports = "<div *ngIf=\"deck?.cards\">\n\n  <div>\n    Deck: <strong>{{ d
 /* 625 */
 /***/ function(module, exports) {
 
-module.exports = "<!-- Use relative positioning so children can be absolutely positioned. -->\n<div class=\"sparrow-deck-card\">\n\n  <!-- The problem div is just part of the normal element flow. -->\n  <div #problemDiv>\n    <sd-scaling-wrapper>\n      <img [src]=\"problemHtml\" style=\"width:100%;\"/>\n      <!--<div [innerHtml]=\"problemHtml\"></div>-->\n    </sd-scaling-wrapper>\n  </div>\n\n  <!--\n    The solution div is absolutely positioned exactly on top of the problem\n    div. Note that the width is set in the code for this component, as setting\n    it here via [style.width.px] binding can throw a change detection\n    exception.\n  -->\n  <div #solutionDiv\n    style=\"position: absolute;\"\n    [style.top.px]=\"problemDiv.offsetTop\"\n    [style.left.px]=\"problemDiv.offsetLeft\"\n  >\n    <sd-scaling-wrapper *ngIf=\"showSolution\">\n      <div style=\"font-size: 128px; color: gold;\" [innerHtml]=\"solutionHtml\"></div>\n    </sd-scaling-wrapper>\n  </div>\n\n</div>\n"
+module.exports = "<!-- Use relative positioning so children can be absolutely positioned. -->\n<div class=\"sparrow-deck-card\">\n\n  <!-- The problem div is just part of the normal element flow. -->\n  <div #problemDiv>\n    <sd-scaling-wrapper>\n      <img [src]=\"problemHtml\" style=\"width:100%;\"/>\n      <!--<div [innerHtml]=\"problemHtml\"></div>-->\n    </sd-scaling-wrapper>\n  </div>\n\n  <!--\n    The solution div is absolutely positioned exactly on top of the problem\n    div. Note that the width is set in the code for this component, as setting\n    it here via [style.width.px] binding can throw a change detection\n    exception.\n  -->\n  <div class=\"valign-wrapper\" #solutionDiv\n    style=\"position: absolute;\"\n    [style.top.px]=\"problemDiv.offsetTop\"\n    [style.left.px]=\"problemDiv.offsetLeft\"\n  >\n    <sd-scaling-wrapper class=\"valign\" *ngIf=\"showSolution\">\n      <div class=\"\" style=\"font-size: 200px;font-weight: bold; color: gold;\" [innerHtml]=\"solutionHtml\"></div>\n    </sd-scaling-wrapper>\n  </div>\n\n</div>\n"
 
 /***/ },
 /* 626 */
@@ -67489,7 +67489,7 @@ module.exports = "<div>\n  <ul>\n    <li *ngFor=\"let deck of decks\">\n      <a
 /* 629 */
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"row fullscreen\" style=\"height:100%;width:100%;background-color:grey;\">\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\">{{vertical(trainingSet.left)}}</div>\n  <div\n    (swipeRight)=\"handleSwipeRight()\"\n    (swipeLeft)=\"handleSwipeLeft()\"\n    class=\"col s8\"\n  >\n    <sd-problem-with-solution\n      [problemTemplate]=\" trainingSet.baseUrl + trainingSet.examples[0].image \"\n      [solutionTemplate]=\" indicator \"\n    ></sd-problem-with-solution>\n  </div>\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\">{{vertical(trainingSet.right)}}</div>\n</div>\n"
+module.exports = "\n<div class=\"row fullscreen\" style=\"height:100%;width:100%;background-color:grey;\">\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\" [innerHtml]=\"vertical(trainingSet.left)\"></div>\n  <div\n    (swipeRight)=\"handleSwipeRight()\"\n    (swipeLeft)=\"handleSwipeLeft()\"\n    class=\"col s8\"\n  >\n    <sd-problem-with-solution\n      [problemTemplate]=\" trainingSet.baseUrl + trainingSet.examples[0].image \"\n      [solutionTemplate]=\" indicator \"\n    ></sd-problem-with-solution>\n  </div>\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\" [innerHtml]=\"vertical(trainingSet.right)\"></div>\n</div>\n"
 
 /***/ },
 /* 630 */
