@@ -31,7 +31,7 @@ export class SparrowsComponent {
   vertical(text: string){
     var result = "";
     for(let c of text){
-      result += c + ' \n';
+      result += c + ' <br />';
     }
     return result;
 

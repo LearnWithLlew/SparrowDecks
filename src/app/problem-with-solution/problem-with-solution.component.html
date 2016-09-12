@@ -15,13 +15,13 @@
     it here via [style.width.px] binding can throw a change detection
     exception.
   -->
-  <div #solutionDiv
+  <div class="valign-wrapper" #solutionDiv
     style="position: absolute;"
     [style.top.px]="problemDiv.offsetTop"
     [style.left.px]="problemDiv.offsetLeft"
   >
-    <sd-scaling-wrapper *ngIf="showSolution">
-      <div style="font-size: 128px; color: gold;" [innerHtml]="solutionHtml"></div>
+    <sd-scaling-wrapper class="valign" *ngIf="showSolution">
+      <div class="" style="font-size: 200px;font-weight: bold; color: gold;" [innerHtml]="solutionHtml"></div>
     </sd-scaling-wrapper>
   </div>
 
