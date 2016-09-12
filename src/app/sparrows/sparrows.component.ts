@@ -15,7 +15,7 @@ export class SparrowsComponent {
   private indicator: string = '';
 
   private sub;
-  
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -28,12 +28,19 @@ export class SparrowsComponent {
     });
   }
 
+  vertical(text: string){
+    var result = "";
+    for(let c of text){
+      result += c + ' \n';
+    }
+    return result;
 
+  }
   advance() {
 
     if (1 < this.trainingSet.examples.length) {
       console.log('Advancing slide!');
-      this.indicator = ''; 
+      this.indicator = '';
       this.trainingSet.examples.shift();
     }
     else {
@@ -61,5 +68,3 @@ export class SparrowsComponent {
   }
 
 }
-
-

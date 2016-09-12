@@ -4,12 +4,12 @@
   <!-- The problem div is just part of the normal element flow. -->
   <div #problemDiv>
     <sd-scaling-wrapper>
-      <img [src]="problemHtml" />
+      <img [src]="problemHtml" style="width:100%;"/>
       <!--<div [innerHtml]="problemHtml"></div>-->
     </sd-scaling-wrapper>
   </div>
 
-  <!-- 
+  <!--
     The solution div is absolutely positioned exactly on top of the problem
     div. Note that the width is set in the code for this component, as setting
     it here via [style.width.px] binding can throw a change detection

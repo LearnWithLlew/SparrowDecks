@@ -1,6 +1,6 @@
 
-<div class="row valign-wrapper  fullscreen" style="height:320px">
-  <div class="blue s2" style="height:320px;"><h5>{{trainingSet.left}}</h5></div>
+<div class="row fullscreen" style="height:100%;width:100%;background-color:grey;">
+  <div class="col s2" style="width:20px;font-size:20pt;">{{vertical(trainingSet.left)}}</div>
   <div
     (swipeRight)="handleSwipeRight()"
     (swipeLeft)="handleSwipeLeft()"
@@ -11,5 +11,5 @@
       [solutionTemplate]=" indicator "
     ></sd-problem-with-solution>
   </div>
-  <div class="blue s2" style="height:320px;"><h5>{{trainingSet.right}}</h5></div>
+  <div class="col s2" style="width:20px;font-size:20pt;">{{vertical(trainingSet.right)}}</div>
 </div>
