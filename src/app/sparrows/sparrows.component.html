@@ -1,14 +1,15 @@
-<div class="row">
-  <div class="col s1">House</div>
-  <div 
+
+<div class="row valign-wrapper  fullscreen" style="height:320px">
+  <div class="blue s2" style="height:320px;"><h5>{{trainingSet.left}}</h5></div>
+  <div
     (swipeRight)="handleSwipeRight()"
     (swipeLeft)="handleSwipeLeft()"
-    class="col s10"
+    class="col s8"
   >
     <sd-problem-with-solution
       [problemTemplate]=" trainingSet.baseUrl + trainingSet.examples[0].image "
       [solutionTemplate]=" indicator "
     ></sd-problem-with-solution>
   </div>
-  <div class="col s1">Song</div>
+  <div class="blue s2" style="height:320px;"><h5>{{trainingSet.right}}</h5></div>
 </div>
