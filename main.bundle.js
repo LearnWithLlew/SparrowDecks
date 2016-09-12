@@ -67489,7 +67489,7 @@ module.exports = "<div>\n  <ul>\n    <li *ngFor=\"let deck of decks\">\n      <a
 /* 629 */
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"row fullscreen\" style=\"height:100%;width:100%;background-color:grey;\">\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\" [innerHtml]=\"vertical(trainingSet.left)\"></div>\n  <div\n    (swipeRight)=\"handleSwipeRight()\"\n    (swipeLeft)=\"handleSwipeLeft()\"\n    class=\"col s8\"\n  >\n    <sd-problem-with-solution\n      [problemTemplate]=\" trainingSet.baseUrl + trainingSet.examples[0].image \"\n      [solutionTemplate]=\" indicator \"\n    ></sd-problem-with-solution>\n  </div>\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\" [innerHtml]=\"vertical(trainingSet.right)\"></div>\n</div>\n"
+module.exports = "\n<div class=\"row fullscreen\" style=\"height:100%;width:100%;background-color:grey;\">\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;line-height: 90%;align:center;\" [innerHtml]=\"vertical(trainingSet.left)\"></div>\n  <div\n    (swipeRight)=\"handleSwipeRight()\"\n    (swipeLeft)=\"handleSwipeLeft()\"\n    class=\"col s8\"\n  >\n    <sd-problem-with-solution\n      [problemTemplate]=\" trainingSet.baseUrl + trainingSet.examples[0].image \"\n      [solutionTemplate]=\" indicator \"\n    ></sd-problem-with-solution>\n  </div>\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\" [innerHtml]=\"vertical(trainingSet.right)\"></div>\n</div>\n"
 
 /***/ },
 /* 630 */
