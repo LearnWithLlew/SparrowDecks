@@ -1,0 +1,4 @@
+1) image loading time
+2) arrow keys for desktop
+3) instructions
+4) css
