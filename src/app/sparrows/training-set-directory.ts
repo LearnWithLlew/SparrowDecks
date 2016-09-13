@@ -5,6 +5,7 @@ import { clutterTrainingSet } from './clutter-training-set';
 import { complexTrainingSet } from './complex-training-set';
 import { badNameTrainingSet } from './bad-name-training-set';
 import { duplicationTrainingSet } from './duplication-training-set';
+import { longLinesTrainingSet } from './long-lines-training-set';
 
 export const trainingSetDirectory = {
   sparrows: sparrowsTrainingSet,
@@ -12,4 +13,5 @@ export const trainingSetDirectory = {
   complex: complexTrainingSet,
   badNames: badNameTrainingSet,
   duplication: duplicationTrainingSet,
+  longLines: longLinesTrainingSet,
 };

@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
     <a [routerLink]="[ '/complex' ]"> Cynefin: Complex vs Complicated </a>  <br />
     <a [routerLink]="[ '/badNames' ]"> Code Smells: Bad Names</a>  <br />
     <a [routerLink]="[ '/duplication' ]"> Code Smells: Duplication</a>  <br />
+    <a [routerLink]="[ '/longLines' ]"> Code Smells: Long Lines</a>  <br />
+    
   `,
   styles: []
 })
