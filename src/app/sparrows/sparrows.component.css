@@ -59,6 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   height: 100%;
   width: 100%;
@@ -70,4 +71,3 @@
   text-shadow: 0 0 10px black;
   color: white;
 }
-

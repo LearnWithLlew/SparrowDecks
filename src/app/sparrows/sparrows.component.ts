@@ -1,5 +1,9 @@
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {
+    DomSanitizationService, // XXX: Becomes DomSanitizer in RC6.
+    SafeHtml
+} from '@angular/platform-browser';
 
 import { trainingSetDirectory } from './training-set-directory';
 
@@ -12,11 +16,11 @@ export class SparrowsComponent {
 
     private trainingSet = null;
 
-    private indicator: string = '';
+    private indicator: SafeHtml = null;
 
     private sub;
 
-    constructor(private route: ActivatedRoute) { }
+    constructor(private route: ActivatedRoute, private sanitizer: DomSanitizationService) { }
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
@@ -40,7 +44,7 @@ export class SparrowsComponent {
 
         if (1 < this.trainingSet.examples.length) {
             console.log('Advancing slide!');
-            this.indicator = '';
+            this.indicator = null;
             this.trainingSet.examples.shift();
         }
         else {
@@ -51,7 +55,12 @@ export class SparrowsComponent {
 
     handleAnswer(givenAnswer) {
         console.log('User said ' + givenAnswer);
-        this.indicator = (this.trainingSet.examples[0].answer === givenAnswer ? '\u2713 yes!' : 'no');
+        let expectedAnswer = this.trainingSet.examples[0].answer;
+        let correct = (expectedAnswer === givenAnswer ?
+            '<span style="color:lightgreen">\u2713</span>' :
+            '<span style="color:red">\u2718</span>'
+        );
+        this.indicator = this.sanitizer.bypassSecurityTrustHtml(correct + ' <br /> ' + expectedAnswer);
         setTimeout(() => { this.advance() }, 500);
     }
 

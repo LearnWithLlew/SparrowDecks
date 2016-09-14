@@ -1,11 +1,8 @@
 <div class="interface">
-
   <div class="chooser">
-
     <div class="answer"
       [innerHtml]="vertical(trainingSet.left)"
     ></div>
-
     <div
       class="exhibit"
       (swipeRight)="handleSwipeRight()"
@@ -19,8 +16,7 @@
     ></div>
 
   </div>
-
-  <div class="indicator" *ngIf=" indicator !== '' ">
+  <div class="indicator" *ngIf=" indicator !== null ">
     <div [innerHtml]=" indicator "></div>
   </div>
 
