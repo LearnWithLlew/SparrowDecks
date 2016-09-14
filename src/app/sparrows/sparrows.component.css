@@ -67,6 +67,7 @@
 
   font-size: 100px;
   font-weight: bold;
-  color: gold;
+  text-shadow: 0 0 10px black;
+  color: white;
 }
 
