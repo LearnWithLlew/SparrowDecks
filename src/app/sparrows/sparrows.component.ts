@@ -51,7 +51,7 @@ export class SparrowsComponent {
 
   handleAnswer(givenAnswer) {
     console.log('User said ' + givenAnswer);
-    this.indicator = (this.trainingSet.examples[0].answer === givenAnswer ? 'YES!' : 'NO');
+    this.indicator = (this.trainingSet.examples[0].answer === givenAnswer ? '\u2713 yes!' : 'no');
     setTimeout(() => { this.advance() }, 500);
   }
 
