@@ -1,6 +1,3 @@
-1) image loading time
-4) css
-5) movement
 7) sound?
 8) clean
 9) back/restart
