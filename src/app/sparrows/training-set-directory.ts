@@ -10,12 +10,12 @@ import { longMethodsTrainingSet } from './long-methods-training-set';
 import { inconsistencyTrainingSet } from './inconsistency-training-set';
 
 export const trainingSetDirectory = {
-  sparrows: sparrowsTrainingSet,
-  clutter: clutterTrainingSet,
-  complex: complexTrainingSet,
-  badNames: badNameTrainingSet,
-  duplication: duplicationTrainingSet,
-  longLines: longLinesTrainingSet,
-  longMethods: longMethodsTrainingSet,
-  inconsistency: inconsistencyTrainingSet,
+    sparrows: sparrowsTrainingSet,
+    clutter: clutterTrainingSet,
+    complex: complexTrainingSet,
+    badNames: badNameTrainingSet,
+    duplication: duplicationTrainingSet,
+    longLines: longLinesTrainingSet,
+    longMethods: longMethodsTrainingSet,
+    inconsistency: inconsistencyTrainingSet,
 };

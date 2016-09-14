@@ -8,7 +8,8 @@
       (swipeRight)="handleSwipeRight()"
       (swipeLeft)="handleSwipeLeft()"
     >
-      <img [src]=" trainingSet.baseUrl + trainingSet.examples[0].image " />
+      <img [src]=" getImage(0) " />
+      <img *ngFor="let i of [1,2,3,4,5]" [src]="  getImage(i) " style="display:none" />
     </div>
 
     <div class="answer"

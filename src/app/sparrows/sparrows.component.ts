@@ -1,10 +1,5 @@
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {
-    DomSanitizationService, // XXX: Becomes DomSanitizer in RC6.
-    SafeHtml
-} from '@angular/platform-browser';
-
 import { trainingSetDirectory } from './training-set-directory';
 
 @Component({
@@ -16,12 +11,10 @@ export class SparrowsComponent {
 
     private trainingSet = null;
     private isCorrect: boolean = true;
-
-    private indicator: SafeHtml = null;
-
+    private indicator: string = null;
     private sub;
 
-    constructor(private route: ActivatedRoute, private sanitizer: DomSanitizationService) { }
+    constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
@@ -71,6 +64,10 @@ export class SparrowsComponent {
         }
     }
 
+    getImage(index) {
+        index = ( index < this.trainingSet.examples.length) ? index : 0;
+        return this.trainingSet.baseUrl + this.trainingSet.examples[index].image
+    }
     handleSwipeLeft() {
         this.handleAnswer(this.trainingSet.left);
     }
