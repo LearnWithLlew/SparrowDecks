@@ -1,4 +1,7 @@
 1) image loading time
-2) arrow keys for desktop
-3) instructions
+2) instructions
 4) css
+5) movement
+7) sound?
+8) clean
+9) back/restart

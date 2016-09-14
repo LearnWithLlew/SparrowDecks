@@ -15,6 +15,7 @@ import { trainingSetDirectory } from './training-set-directory';
 export class SparrowsComponent {
 
     private trainingSet = null;
+    private isCorrect: boolean = true;
 
     private indicator: SafeHtml = null;
 
@@ -56,11 +57,8 @@ export class SparrowsComponent {
     handleAnswer(givenAnswer) {
         console.log('User said ' + givenAnswer);
         let expectedAnswer = this.trainingSet.examples[0].answer;
-        let correct = (expectedAnswer === givenAnswer ?
-            '<span style="color:lightgreen">\u2713</span>' :
-            '<span style="color:red">\u2718</span>'
-        );
-        this.indicator = this.sanitizer.bypassSecurityTrustHtml(correct + ' <br /> ' + expectedAnswer);
+        this.isCorrect = (expectedAnswer === givenAnswer);
+        this.indicator = expectedAnswer;
         setTimeout(() => { this.advance() }, 500);
     }
 
