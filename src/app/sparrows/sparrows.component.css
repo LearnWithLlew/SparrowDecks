@@ -65,6 +65,7 @@
   width: 100%;
 
   flex: 1 auto;
+  flex-direction: column;
 
   font-size: 100px;
   font-weight: bold;
