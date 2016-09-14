@@ -1,70 +1,79 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { trainingSetDirectory } from './training-set-directory';
 
 @Component({
-  selector: 'sd-sparrows',
-  templateUrl: 'sparrows.component.html',
-  styleUrls: ['sparrows.component.css']
+    selector: 'sd-sparrows',
+    templateUrl: 'sparrows.component.html',
+    styleUrls: ['sparrows.component.css']
 })
 export class SparrowsComponent {
 
-  private trainingSet = null;
+    private trainingSet = null;
 
-  private indicator: string = '';
+    private indicator: string = '';
 
-  private sub;
+    private sub;
 
-  constructor(private route: ActivatedRoute) { }
+    constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      let trainingSetName = params['trainingSetName'];
+    ngOnInit() {
+        this.sub = this.route.params.subscribe(params => {
+            let trainingSetName = params['trainingSetName'];
 
-      this.trainingSet = trainingSetDirectory[trainingSetName];
+            this.trainingSet = trainingSetDirectory[trainingSetName];
 
-      console.log('Training set is now ', trainingSetName);
-    });
-  }
-
-  vertical(text: string){
-    var result = "";
-    for(let c of text){
-      result += c + ' <br />';
+            console.log('Training set is now ', trainingSetName);
+        });
     }
-    return result;
 
-  }
-  advance() {
+    vertical(text: string) {
+        var result = "";
+        for (let c of text) {
+            result += c + ' <br />';
+        }
+        return result;
 
-    if (1 < this.trainingSet.examples.length) {
-      console.log('Advancing slide!');
-      this.indicator = '';
-      this.trainingSet.examples.shift();
     }
-    else {
-      this.indicator = 'DONE!';
-      console.log('Done!');
+    advance() {
+
+        if (1 < this.trainingSet.examples.length) {
+            console.log('Advancing slide!');
+            this.indicator = '';
+            this.trainingSet.examples.shift();
+        }
+        else {
+            this.indicator = 'DONE!';
+            console.log('Done!');
+        }
     }
-  }
 
-  handleAnswer(givenAnswer) {
-    console.log('User said ' + givenAnswer);
-    this.indicator = (this.trainingSet.examples[0].answer === givenAnswer ? '\u2713 yes!' : 'no');
-    setTimeout(() => { this.advance() }, 500);
-  }
+    handleAnswer(givenAnswer) {
+        console.log('User said ' + givenAnswer);
+        this.indicator = (this.trainingSet.examples[0].answer === givenAnswer ? '\u2713 yes!' : 'no');
+        setTimeout(() => { this.advance() }, 500);
+    }
 
-  handleSwipeLeft() {
-    this.handleAnswer(this.trainingSet.left);
-  }
+    @HostListener('window:keydown', ['$event'])
+    handleKeyup(event) {
+        if (event.key === "ArrowRight") {
+            this.handleSwipeRight();
+        } else if (event.key === "ArrowLeft") {
+            this.handleSwipeLeft();
+        }
+    }
 
-  handleSwipeRight() {
-    this.handleAnswer(this.trainingSet.right);
-  }
+    handleSwipeLeft() {
+        this.handleAnswer(this.trainingSet.left);
+    }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
+    handleSwipeRight() {
+        this.handleAnswer(this.trainingSet.right);
+    }
+
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+    }
 
 }

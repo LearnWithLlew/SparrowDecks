@@ -16,5 +16,8 @@
     "types": [
       "jasmine"
     ]
+  },
+  "atom": {
+    "formatOnSave": true
   }
 }
