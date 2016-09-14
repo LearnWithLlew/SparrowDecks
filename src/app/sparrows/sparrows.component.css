@@ -1,0 +1,72 @@
+.interface {
+  position: relative;
+  background-color: grey;
+}
+
+.chooser {
+  /* flex container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.answer {
+  /*border: 3px solid red;*/
+
+  /* flex container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* flex item */
+  flex: 2;
+
+  height: 100%;
+
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 90%;
+  text-align: center;
+}
+
+.exhibit {
+  /*border: 3px solid goldenrod;*/
+
+  /* flex container */
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  /* flex item */
+  flex: 8;
+}
+
+.exhibit img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.indicator {
+  /*border: 3px solid lightgreen;*/
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+
+  flex: 1 auto;
+
+  font-size: 100px;
+  font-weight: bold;
+  color: gold;
+}
+
