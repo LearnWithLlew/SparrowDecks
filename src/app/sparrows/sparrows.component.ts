@@ -65,7 +65,7 @@ export class SparrowsComponent {
     }
 
     getImage(index) {
-        index = ( index < this.trainingSet.examples.length) ? index : 0;
+        index = (index < this.trainingSet.examples.length) ? index : 0;
         return this.trainingSet.baseUrl + this.trainingSet.examples[index].image
     }
     handleSwipeLeft() {

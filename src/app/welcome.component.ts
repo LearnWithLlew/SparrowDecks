@@ -16,7 +16,8 @@ import { Component } from '@angular/core';
 
     <br />
     <div><b>Directions: </b>
-    Pick one of the available decks, then swipe the image right or left (or use arrow keys)
+    Pick one of the available decks, <br />
+    then sort (tap, swipe, arrow keys) the images the left or right
     </div>
     <div>
     By: <a href="https://twitter.com/wnodom">Bill Odom</a> &amp;
