@@ -63,6 +63,7 @@
 
   height: 100%;
   width: 100%;
+  line-height: 60%;
 
   flex: 1 auto;
   flex-direction: column;
