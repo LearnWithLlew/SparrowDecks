@@ -67328,7 +67328,7 @@ var SparrowsComponent = (function () {
     SparrowsComponent.prototype.handleAnswer = function (givenAnswer) {
         var _this = this;
         console.log('User said ' + givenAnswer);
-        this.indicator = (this.trainingSet.examples[0].answer === givenAnswer ? 'YES!' : 'NO');
+        this.indicator = (this.trainingSet.examples[0].answer === givenAnswer ? '\u2713 yes!' : 'no');
         setTimeout(function () { _this.advance(); }, 500);
     };
     SparrowsComponent.prototype.handleSwipeLeft = function () {
@@ -67535,7 +67535,7 @@ module.exports = ""
 /* 625 */
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = ".interface {\n  position: relative;\n  background-color: grey;\n}\n\n.chooser {\n  /* flex container */\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  height: 101vh;\n}\n\n.answer {\n  /*border: 3px solid red;*/\n\n  /* flex container */\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  /* flex item */\n  flex: 2;\n\n  height: 100%;\n\n  color: white;\n  font-size: 25px;\n  font-weight: bold;\n  line-height: 90%;\n  text-align: center;\n}\n\n.exhibit {\n  /*border: 3px solid goldenrod;*/\n\n  /* flex container */\n  display: flex;\n  justify-content: center;\n  height: 100%;\n\n  /* flex item */\n  flex: 8;\n}\n\n.exhibit img {\n  width: 100%;\n  object-fit: contain;\n}\n\n.indicator {\n  /*border: 3px solid lightgreen;*/\n\n  position: absolute;\n  left: 0;\n  top: 0;\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  height: 100%;\n  width: 100%;\n\n  flex: 1 auto;\n\n  font-size: 100px;\n  font-weight: bold;\n  text-shadow: 0 0 10px black;\n  color: white;\n}\n\n"
 
 /***/ },
 /* 626 */
@@ -67589,7 +67589,7 @@ module.exports = "<div>\n  <ul>\n    <li *ngFor=\"let deck of decks\">\n      <a
 /* 634 */
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"row fullscreen\" style=\"height:100%;width:100%;background-color:grey;\">\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;line-height: 90%;align:center;\" [innerHtml]=\"vertical(trainingSet.left)\"></div>\n  <div\n    (swipeRight)=\"handleSwipeRight()\"\n    (swipeLeft)=\"handleSwipeLeft()\"\n    class=\"col s8\"\n  >\n    <sd-problem-with-solution\n      [problemTemplate]=\" trainingSet.baseUrl + trainingSet.examples[0].image \"\n      [solutionTemplate]=\" indicator \"\n    ></sd-problem-with-solution>\n  </div>\n  <div class=\"col s2\" style=\"width:20px;font-size:20pt;\" [innerHtml]=\"vertical(trainingSet.right)\"></div>\n</div>\n"
+module.exports = "<div class=\"interface\">\n\n  <div class=\"chooser\">\n\n    <div class=\"answer\"\n      [innerHtml]=\"vertical(trainingSet.left)\"\n    ></div>\n\n    <div\n      class=\"exhibit\"\n      (swipeRight)=\"handleSwipeRight()\"\n      (swipeLeft)=\"handleSwipeLeft()\"\n    >\n      <img [src]=\" trainingSet.baseUrl + trainingSet.examples[0].image \" />\n    </div>\n\n    <div class=\"answer\"\n      [innerHtml]=\"vertical(trainingSet.right)\"\n    ></div>\n\n  </div>\n\n  <div class=\"indicator\" *ngIf=\" indicator !== '' \">\n    <div [innerHtml]=\" indicator \"></div>\n  </div>\n\n</div>\n"
 
 /***/ },
 /* 635 */
