@@ -28,7 +28,7 @@ export class SparrowsComponent {
 
     vertical(text: string) {
         var result = "";
-        for (let c of text) {
+        for (let c of text.replace(/\./g, ' ')) {
             result += c + ' <br />';
         }
         return result;
@@ -51,8 +51,8 @@ export class SparrowsComponent {
         console.log('User said ' + givenAnswer);
         let expectedAnswer = this.trainingSet.examples[0].answer;
         this.isCorrect = (expectedAnswer === givenAnswer);
-        this.indicator = expectedAnswer;
-        setTimeout(() => { this.advance() }, 500);
+        this.indicator = expectedAnswer.replace(/\./g, ' ');
+        setTimeout(() => { this.advance() }, 1250);
     }
 
     @HostListener('window:keydown', ['$event'])

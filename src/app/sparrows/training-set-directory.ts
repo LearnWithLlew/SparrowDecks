@@ -8,7 +8,12 @@ import { duplicationTrainingSet } from './duplication-training-set';
 import { longLinesTrainingSet } from './long-lines-training-set';
 import { longMethodsTrainingSet } from './long-methods-training-set';
 import { inconsistencyTrainingSet } from './inconsistency-training-set';
-import { goRustTrainingSet } from './go-rust-training-set';
+import {
+    goRustAssignmentsTrainingSet,
+    goRustTrainingSet,
+    haskellRustAssignmentsTrainingSet,
+    haskellRustTrainingSet
+} from './languages-training-set';
 
 export const trainingSetDirectory = {
     sparrows: sparrowsTrainingSet,
@@ -20,4 +25,7 @@ export const trainingSetDirectory = {
     longMethods: longMethodsTrainingSet,
     inconsistency: inconsistencyTrainingSet,
     goRust: goRustTrainingSet,
+    haskellRust: haskellRustTrainingSet,
+    goRustAssignments: goRustAssignmentsTrainingSet,
+    haskellRustAssignments: haskellRustAssignmentsTrainingSet
 };
