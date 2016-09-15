@@ -1,3 +1,4 @@
 7) sound?
 8) clean
 9) back/restart
+10) metrics

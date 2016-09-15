@@ -8,6 +8,7 @@ import { duplicationTrainingSet } from './duplication-training-set';
 import { longLinesTrainingSet } from './long-lines-training-set';
 import { longMethodsTrainingSet } from './long-methods-training-set';
 import { inconsistencyTrainingSet } from './inconsistency-training-set';
+import { goRustTrainingSet } from './go-rust-training-set';
 
 export const trainingSetDirectory = {
     sparrows: sparrowsTrainingSet,
@@ -18,4 +19,5 @@ export const trainingSetDirectory = {
     longLines: longLinesTrainingSet,
     longMethods: longMethodsTrainingSet,
     inconsistency: inconsistencyTrainingSet,
+    goRust: goRustTrainingSet,
 };
