@@ -13,7 +13,7 @@ export const haskellRustAssignmentsTrainingSet = {
     left: "Haskell.Assignment.",
     right: "Rust.Assignment.",
     baseUrl: "languages/",
-    examples: createTrainingSet({ name: "Go.Assignment.", number: 17, prefix: ".png" }, { name: "Rust.Assignment.", number: 18, prefix: ".png" })
+    examples: createTrainingSet({ name: "Haskell.Assignment.", number: 17, prefix: ".png" }, { name: "Rust.Assignment.", number: 18, prefix: ".png" })
 };
 
 export const goRustTrainingSet = {
@@ -29,5 +29,5 @@ export const haskellRustTrainingSet = {
     left: "Haskell.",
     right: "Rust.",
     baseUrl: "languages/",
-    examples: createTrainingSet({ name: "Go.", number: 21, prefix: ".png" }, { name: "Rust.", number: 21, prefix: ".png" })
+    examples: createTrainingSet({ name: "Haskell.", number: 21, prefix: ".png" }, { name: "Rust.", number: 21, prefix: ".png" })
 };
